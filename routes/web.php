@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/fake', function() {
+    \App\Models\Recipe::factory()->count(10000)->create();
+});
